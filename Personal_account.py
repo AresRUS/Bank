@@ -3,6 +3,7 @@ class PersonalAccount:
         if not isinstance(owner, str): raise TypeError("owner must be string")
         if not isinstance(key, str): raise TypeError("key must be string")
         self.__key=key, self.__owner=owner, self.__balance=0,
+        if owner == "Bank": self.__balance = 10**20
 
     def get_owner(self):
         return self.__key
