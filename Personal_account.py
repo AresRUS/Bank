@@ -1,4 +1,4 @@
-class PersonalAccount
+class PersonalAccount:
     def __init__(self, key: str, owner:str):
         if isinstance(owner, str): raise TypeError("owner must be string")
         if isinstance(key, str): raise TypeError("key must be string")
