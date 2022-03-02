@@ -1,8 +1,9 @@
-class PersonalAccount
+class PersonalAccount:
     def __init__(self, key: str, owner:str):
         if isinstance(owner, str): raise TypeError("owner must be string")
         if isinstance(key, str): raise TypeError("key must be string")
         self.__key=key, self.__owner=owner, self.__balance=0,
+        if owner == "Bank": self.__balance = 10**20
 
     def get_owner(self):
         return self.__key
