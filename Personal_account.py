@@ -1,8 +1,7 @@
 class PersonalAccount:
     def __init__(self, key: str, owner:str):
-        #print(isinstance(owner, str), isinstance("Bank", str))
-        if isinstance(owner, str): raise TypeError("owner must be string")
-        if isinstance(key, str): raise TypeError("key must be string")
+        if not isinstance(owner, str): raise TypeError("owner must be string")
+        if not isinstance(key, str): raise TypeError("key must be string")
         self.__key=key, self.__owner=owner, self.__balance=0,
         if owner == "Bank": self.__balance = 10**20
 
@@ -16,7 +15,7 @@ class PersonalAccount:
         self.__balance += amount
 
     def transfer(self, personal_account, key, payment_amount):
-        if isinstance(personal_account, PersonalAccount):
+        if not isinstance(personal_account, PersonalAccount):
             raise TypeError("wrong Personal Account")
         else:
             if self.__key == key:
